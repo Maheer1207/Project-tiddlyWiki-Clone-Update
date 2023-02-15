@@ -20,6 +20,7 @@ namespace TWUpdate
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
+            try { 
             var subscriptionId = System.Environment.GetEnvironmentVariable("SUBSCRIPTION_ID", EnvironmentVariableTarget.Process);
             var storageConnectionString = System.Environment.GetEnvironmentVariable("STORAGE_CONNECTION_STRING", EnvironmentVariableTarget.Process);
             var sourceShareName = System.Environment.GetEnvironmentVariable("SOURCE_SHARE_NAME", EnvironmentVariableTarget.Process);
@@ -104,6 +105,10 @@ namespace TWUpdate
             await webApp.RestartAsync();
 
             return new OkObjectResult(new { responseMessage = "Destination Updated!! and Restart done!!" });
+            } catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
         }
     }
 }
