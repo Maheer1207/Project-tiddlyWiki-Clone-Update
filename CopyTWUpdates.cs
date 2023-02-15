@@ -108,6 +108,7 @@ namespace TWUpdate
             } catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
+                return new OkObjectResult(new { responseMessage = "Error!!" });
             }
         }
     }
