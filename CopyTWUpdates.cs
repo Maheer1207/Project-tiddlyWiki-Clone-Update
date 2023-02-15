@@ -39,8 +39,6 @@ namespace TWUpdate
             var destinationRoot = destinationShareClient.GetRootDirectoryClient();
 
             // Get a reference to "tiddlywiki.info" files and "tiddlers" directories
-            var sourceTWInfo = sourceRoot.GetFileClient("tiddlywiki.info");
-            var destinationTWInfo = destinationRoot.GetFileClient("tiddlywiki.info");
             var sourceTiddlersDir = sourceRoot.GetSubdirectoryClient("tiddlers");
             var destinationTiddlersDir = destinationRoot.GetSubdirectoryClient("tiddlers");
 
