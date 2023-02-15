@@ -48,7 +48,7 @@ namespace TWUpdate
                 if (!file.IsDirectory)
                 {
                     var name = file.Name;
-                    if ((name.Substring(0, 1) != "$") && (name != "CloneAllUpdates.tid") && (name != "httpTrigger.js") && (name != "httpTrigger.js.meta")) 
+                    if ((name.Substring(0, 1) != "$") && (name != "CloneAllUpdates.tid") && (name != "triggerClone.js") && (name != "triggerClone.js.meta")) 
                     {
                         var sourceTid = sourceTiddlersDir.GetFileClient(name);
                         var destinationTid = destinationTiddlersDir.GetFileClient(name);
