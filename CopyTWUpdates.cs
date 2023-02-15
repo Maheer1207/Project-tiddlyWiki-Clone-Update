@@ -107,7 +107,7 @@ namespace TWUpdate
             return new OkObjectResult(new { responseMessage = "Destination Updated!! and Restart done!!" });
             } catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                log.LogError(e.ToString());
                 return new OkObjectResult(new { responseMessage = "Error!!" });
             }
         }
