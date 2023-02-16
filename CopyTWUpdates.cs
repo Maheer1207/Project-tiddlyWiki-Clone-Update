@@ -59,7 +59,7 @@ namespace TWUpdate
                         {
                             if ((sourceTid.GetProperties().Value.LastModified > destinationTid.GetProperties().Value.LastModified))
                             {
-                                Console.WriteLine(name + " this is being updated in the destination");
+                                log.LogInformation(name + " this is being updated in the destination");
                                 await destinationTid.DeleteAsync();
                                 await destinationTid.StartCopyAsync(sourceTid.Uri);
                             }
@@ -67,7 +67,7 @@ namespace TWUpdate
                         // If any .tid file doesn't exist, then its created
                         else
                         {
-                            Console.WriteLine(name + " this is being newly created in the destination");
+                            log.LogInformation(name + " this is being newly created in the destination");
                             await destinationTid.StartCopyAsync(sourceTid.Uri);
                         }
                     }
@@ -91,7 +91,7 @@ namespace TWUpdate
                         // If the same file exists, and it has been updated. Then the file is updated for the destination as well
                         if (!(await sourceTid.ExistsAsync()))
                         {
-                            Console.WriteLine(name + " is deleted from the destination");
+                            log.LogInformation(name + " is deleted from the destination");
                             await destinationTid.DeleteAsync();
                         }
                     }
