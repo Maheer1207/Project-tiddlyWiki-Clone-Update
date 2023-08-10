@@ -1,11 +1,16 @@
-# Clone Tiddly Wiki Changes
+# Clone and Update Tiddly Wiki
 
-The http triggered Azure function, clones all the changes made in the source tiddly's storage to destination tiddly's storage. This cloning is done for the all files and file types
-other than the tiddly configuration files. The function gets deployed to Azure as Function App, through the GitHub Workflow.
+This project was developed for an organization with the aim of maintaining Tiddly Wikis in scenarios like the Database Management System of an organization. In situations where not everyone has access for updates due to limitations that help preserve data integrity and security, this project serves a similar purpose. However, it takes the form of a wiki, offering significantly more flexibility in terms of the data we can add and how we can manage it. Moreover, Tiddly Wikis are open-source single-page applications, which makes them user-friendly and easy to use.
 
-To attain the task, a few environment variable, azure AD app registration and CORS of the Function App were handled.
+In my case, I had two Tiddly Wikis. One of them was the main wiki, accessible only to a limited number of individuals with editing rights. This version was presented to clients. The other wiki (source wiki) was open to all individuals working on the project, enabling them to input updates specific to their respective departments. Following data entry, the higher authorities conducted regular data checks to ensure data integrity and update the main Tiddly Wiki. Performing this task manually would have been time-consuming, as each entry needed to be accurate and input one by one. Therefore, they sought a solution—a program that could, with a simple click of a button, transfer all the finalized updates from the second wiki to the main wiki. This is where the project comes into play.
 
-## Steps
+## How it works
+
+The C# project responsible for executing the entire process is hosted within an Azure Function App, triggered via HTTP. Within the main wiki, a button is situated to initiate the HTTP request, thereby launching the Function App. Throughout the cloning process, the storage of the Web App that hosts the source wiki is meticulously examined for any updates or changes that might have been applied. Following this examination, all the updates and modifications are then duplicated to the storage of the Web App responsible for hosting the main wiki.
+
+To successfully accomplish this task, a few essential elements require management: environment variables, Azure AD app registration, and the CORS settings of the Function App.
+
+## Steps to setup the environment
 
 1. Set two Web Apps for the public (readonly) and private (editable) Tiddly Wiki, with the File Shares to the store files required for the Tiddly Wikis through "Path mappings"
    in the "Configuration" blade.
