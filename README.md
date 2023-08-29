@@ -1,4 +1,4 @@
-# Clone and Update Tiddly Wiki
+# Clone Updates of Tiddly Wiki
 
 This project was developed for an organization with the aim of maintaining Tiddly Wikis in scenarios like the Database Management System of an organization. In situations where not everyone has access to updates due to limitations that help preserve data integrity and security, this project serves a similar purpose. However, it takes the form of a wiki, offering significantly more flexibility in terms of the data we can add and how we can manage it. Moreover, Tiddly Wikis are open-source single-page applications, which makes them user-friendly and easy to use.
 
