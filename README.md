@@ -25,7 +25,7 @@ To successfully accomplish this task, a few essential elements require managemen
 1. Set two Web Apps for the public (read-only) and private (editable) Tiddly Wikis, with file shares to the store files required for the Tiddly Wikis through "Path mappings" in the "Configuration" blade.
 2. Set the Azure AD for the public Tiddly Wiki to do authentication and authorization since we want to restart the public (read-only) Tiddly Wiki through the Azure Function App.
 3. Add a role in the "Access Control (IAM)" blade for the Azure AD App Registation under our Azure subscription for authentication and authorization processes.
-4. Set up an Azure Function App that runs the HTTP Trigger Azure Function and is deployed through this GitHub repo's workflow
+4. Set up an Azure Function App that runs the HTTP Trigger Azure Function and is deployed through this GitHub repo's workflow.
 5. Set the Environment Variable in the Function App's Configuration.
 6. For the Function App, to Handle CORS, set the domain of the Web App that will be triggering the function as "Allowed Origins."
 7. In the Custom Widget created for triggering the HTTP Azure Function, set the URL as "fetch" as "<FunctionAppURL>/api/CopyTWUpdates" and for the call, use the function app APP key while fetching.
@@ -37,7 +37,7 @@ To successfully accomplish this task, a few essential elements require managemen
 3. SOURCE_SHARE_NAME: "FILESHARE NAME" of the source.
 4. DESTINATION_SHARE_NAME: "FILESHARE NAME" of the destination.
 5. RESOURCE_GROUP: "RESOURCE GROUP" holds the App Service for the Tiddly Wiki we want to restart, the public (read-only) one.
-6. APP_NAME_RESTART: "WEB APP" name that hosts the public (read-only) Tiddly Wiki
-7. CLIENT_SECRET_RESTART: The "CLIENT SECRET" of the Azure AD App Regisration for the public Tiddly Wiki's Web App
+6. APP_NAME_RESTART: "WEB APP" name that hosts the public (read-only) Tiddly Wiki.
+7. CLIENT_SECRET_RESTART: The "CLIENT SECRET" of the Azure AD App Regisration for the public Tiddly Wiki's Web App.
 8. CLIENT_ID_RESTART: The "CLIENT ID" of the Azure AD App Regisration for the public Tiddly Wiki's Web App.
 9. TENANT_ID: The "TENANT_ID" of the Azure AD App Regisration for the public Tiddly Wiki's Web App.
